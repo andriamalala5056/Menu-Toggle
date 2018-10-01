@@ -10,39 +10,71 @@ html, body {
 /* line 9, ../scss/style.scss */
 nav {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column-reverse;
+  justify-content: flex-end;
   background-color: black;
   padding: 0px 20px 0px 20px;
 }
 /* line 10, ../scss/style.scss */
 nav ul {
-  display: flex;
+  display: none;
+  flex-direction: column;
+  flex: 1;
   padding: 0;
   margin: 0;
 }
-/* line 14, ../scss/style.scss */
+/* line 16, ../scss/style.scss */
 nav ul li {
   list-style: none;
   padding: 16px 30px 16px 30px;
-  background-color: black;
+  background-color: #636363;
   color: #fff;
 }
-/* line 19, ../scss/style.scss */
+/* line 21, ../scss/style.scss */
 nav ul li a {
   text-decoration: none;
   color: #fff;
 }
-/* line 24, ../scss/style.scss */
+/* line 26, ../scss/style.scss */
 nav ul li:hover {
   background-color: #ff3c70;
 }
-/* line 34, ../scss/style.scss */
+/* line 35, ../scss/style.scss */
+nav .toggle {
+  align-self: flex-end;
+}
+/* line 36, ../scss/style.scss */
 nav .toggle i {
   font-size: 30px;
   color: #fff;
+  line-height: 1.6;
 }
-/* line 38, ../scss/style.scss */
+/* line 41, ../scss/style.scss */
 nav .toggle i:hover {
   color: #ff3c70;
+}
+
+@media screen and (min-width: 590px) {
+  /* line 49, ../scss/style.scss */
+  nav {
+    justify-content: center;
+  }
+  /* line 50, ../scss/style.scss */
+  nav .toggle {
+    display: none;
+  }
+  /* line 53, ../scss/style.scss */
+  nav ul {
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+  }
+  /* line 57, ../scss/style.scss */
+  nav ul li {
+    background-color: black;
+  }
+}
+/* line 65, ../scss/style.scss */
+ul.active {
+  display: flex;
 }

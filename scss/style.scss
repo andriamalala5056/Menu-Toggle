@@ -8,13 +8,15 @@ html, body {
 
 nav {
     ul {
-        display: flex;
+        display: none;
+        flex-direction: column;
+        flex: 1;
         padding: 0;
         margin: 0;
         li {
             list-style: none;
             padding: 16px 30px 16px 30px;
-            background-color: black;
+            background-color: #636363;
             color: #fff;
             a {
                 text-decoration: none;
@@ -26,17 +28,40 @@ nav {
         }
     }
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column-reverse;
+    justify-content: flex-end;
     background-color: black;
     padding: 0px 20px 0px 20px;
     .toggle {
         i {
             font-size: 30px;
             color: #fff;
+            line-height: 1.6;
         }
         i:hover {
             color: #ff3c70;
         }
+        align-self: flex-end;
     }
+}
+
+@media screen and (min-width:590px) {
+    nav {
+        .toggle {
+            display: none;
+        }
+        ul {
+            display: flex;
+            flex-direction: row;
+            align-self: center;
+            li {
+                background-color: black;
+            }
+        }
+        justify-content: center;
+    }
+}
+
+ul.active {
+    display: flex;
 }
